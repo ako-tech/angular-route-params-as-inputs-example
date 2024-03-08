@@ -1,0 +1,22 @@
+<label class="search">
+  <img src="/assets/search.svg" alt="filtrar por nombre" />
+  <input type="text" placeholder="Filtrar por Nombre" [formControl]="search" />
+</label>
+
+<button
+  routerLink="./"
+  [queryParams]="{ orderBy: 'priceASC' }"
+  queryParamsHandling="merge"
+  routerLinkActive="active"
+>
+  Precio más Bajo
+</button>
+
+<button
+  routerLink="./"
+  [queryParams]="{ orderBy: 'priceDESC' }"
+  queryParamsHandling="merge"
+  routerLinkActive="active"
+>
+  Precio más Alto
+</button>

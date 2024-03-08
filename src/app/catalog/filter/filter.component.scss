@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  height: 40px;
+  background-color: #e3dfe9;
+  border-radius: 8px;
+  margin-bottom: var(--base-separation);
+  align-items: stretch;
+  padding: 2px;
+}
+
+.search {
+  display: flex;
+  flex-grow: 1;
+  img {
+    margin-left: 4px;
+    padding: 4px;
+  }
+
+  input {
+    margin-left: var(--half-separation);
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    flex-grow: 1;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0 var(--half-separation);
+  white-space: nowrap;
+
+  &:hover,
+  &.active {
+    background-color: #ccc2dc;
+  }
+
+  &:nth-last-child(2) {
+    border-left: 1px solid #ccc2dc;
+  }
+}
