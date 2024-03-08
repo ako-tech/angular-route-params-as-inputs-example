@@ -6,12 +6,12 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'catalog',
     component: CatalogComponent,
     pathMatch: 'full',
   },
   {
-    path: 'products/:id',
+    path: 'catalog/products/:id',
     component: ProductDetailsComponent,
   },
 ];
