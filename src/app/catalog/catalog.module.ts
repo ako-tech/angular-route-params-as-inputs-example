@@ -5,6 +5,7 @@ import { CatalogRoutingModule } from './catalog-routing.module';
 import { CatalogComponent } from './catalog.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { FilterComponent } from './filter/filter.component';
+import { BackToCatalogDirective } from './helpers/back-to-catalog.directive';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,12 @@ import { FilterComponent } from './filter/filter.component';
     CatalogProductComponent,
     ProductDetailsComponent,
   ],
-  imports: [CommonModule, CatalogRoutingModule, FilterComponent],
+  imports: [
+    CommonModule,
+    CatalogRoutingModule,
+    FilterComponent,
+    BackToCatalogDirective,
+  ],
   exports: [CatalogComponent],
 })
 export default class CatalogModule {}

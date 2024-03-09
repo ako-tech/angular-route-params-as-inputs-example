@@ -1,6 +1,5 @@
-import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { CatalogService } from '../catalog.service';
@@ -22,15 +21,6 @@ export class ProductDetailsComponent {
 
   constructor(
     private catalogService: CatalogService,
-    private route: ActivatedRoute,
-    private router: Router,
-    protected location: Location
+    private route: ActivatedRoute
   ) {}
-
-  navigateBack(): void {
-    const { lastSuccessfulNavigation } = this.router;
-    lastSuccessfulNavigation
-      ? this.location.back()
-      : this.router.navigate(['catalog']);
-  }
 }
