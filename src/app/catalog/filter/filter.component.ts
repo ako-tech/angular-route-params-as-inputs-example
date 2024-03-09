@@ -18,9 +18,14 @@ import { tap } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterComponent {
-  search = new FormControl('', { nonNullable: true });
+  search: FormControl<string>;
 
   constructor(private router: Router, private route: ActivatedRoute) {
+    this.search = new FormControl(
+      this.route.snapshot.queryParamMap.get('f') ?? '',
+      { nonNullable: true }
+    );
+
     this.search.valueChanges
       .pipe(
         tap((val) =>
