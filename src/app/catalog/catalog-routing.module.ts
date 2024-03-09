@@ -8,7 +8,6 @@ const routes: Routes = [
   {
     path: 'catalog',
     component: CatalogComponent,
-    pathMatch: 'full',
   },
   {
     path: 'catalog/products/:id',

@@ -1,8 +1,8 @@
+import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { CatalogService } from '../catalog.service';
 import { Product } from '../product.interface';
 
@@ -17,8 +17,7 @@ export class ProductDetailsComponent {
     map((paramMap) => Number(paramMap.get('id')))
   );
   product$: Observable<Product | null> = this.id$.pipe(
-    switchMap((id) => this.catalogService.getProduct(id)),
-    tap((product) => product === null && this.router.navigate(['catalog']))
+    switchMap((id) => this.catalogService.getProduct(id))
   );
 
   constructor(
@@ -26,11 +25,7 @@ export class ProductDetailsComponent {
     private route: ActivatedRoute,
     private router: Router,
     protected location: Location
-  ) {
-    console.log(router.lastSuccessfulNavigation);
-  }
-
-  addToCart(product: Product): void {}
+  ) {}
 
   navigateBack(): void {
     const { lastSuccessfulNavigation } = this.router;

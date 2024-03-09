@@ -14,7 +14,7 @@ import { Products } from './product.interface';
 })
 export class CatalogComponent {
   products$ = this.catalogService.products$;
-  filter$: Observable<string | null> = this.route.queryParamMap.pipe(
+  nameFilter$: Observable<string | null> = this.route.queryParamMap.pipe(
     map((queryParamMap) => queryParamMap.get('f'))
   );
   orderBy$: Observable<string | null> = this.route.queryParamMap.pipe(
@@ -23,7 +23,7 @@ export class CatalogComponent {
 
   filteredProducts$: Observable<Products> = combineLatest([
     this.products$,
-    this.filter$,
+    this.nameFilter$,
   ]).pipe(map(filterByProductName));
 
   orderedProducts$: Observable<Products> = combineLatest([
