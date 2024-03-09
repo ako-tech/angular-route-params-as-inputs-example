@@ -1,8 +1,7 @@
 <h1>Catálogo</h1>
 <ako-catalog-filters />
 <div class="catalog-grid">
-  <ako-catalog-product
-    *ngFor="let product of orderedProducts$ | async"
-    [product]="product"
-  ></ako-catalog-product>
+  @for(product of orderedProducts$|async; track product.id){
+  <ako-catalog-product [product]="product" />
+  }
 </div>
