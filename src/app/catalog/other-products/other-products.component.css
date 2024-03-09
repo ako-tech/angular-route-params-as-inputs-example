@@ -1,0 +1,13 @@
+h3 {
+  margin-bottom: var(--half-separation);
+}
+.container {
+  display: inline-flex;
+  gap: var(--base-separation);
+  scale: 0.9;
+  transform-origin: top left;
+}
+
+ako-catalog-product {
+  max-width: 250px;
+}

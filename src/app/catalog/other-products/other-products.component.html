@@ -1,0 +1,6 @@
+<h3>Otros Productos</h3>
+<div class="container">
+  @for(product of productsWithoutCurrent$ | async; track product.id) {
+  <ako-catalog-product [product]="product" />
+  }
+</div>

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Product } from '../product.interface';
 
 @Component({
@@ -9,14 +9,10 @@ import { Product } from '../product.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CatalogProductComponent {
-  @Input() product!: Product;
-  constructor(private router: Router, private route: ActivatedRoute) {}
-
-  addToCart(): void {}
+  @Input({ required: true }) product!: Product;
+  constructor(private router: Router) {}
 
   navigateToProductDetails(): void {
-    this.router.navigate(['products', this.product.id], {
-      relativeTo: this.route,
-    });
+    this.router.navigate(['catalog', 'products', this.product.id]);
   }
 }
