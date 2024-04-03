@@ -5,7 +5,7 @@ import { Product } from '../product.interface';
 @Component({
   selector: 'ako-catalog-product',
   templateUrl: './catalog-product.component.html',
-  styleUrls: ['./catalog-product.component.css'],
+  styleUrls: ['./catalog-product.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CatalogProductComponent {

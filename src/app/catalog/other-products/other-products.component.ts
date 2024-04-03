@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'ako-other-products',
   templateUrl: './other-products.component.html',
-  styleUrls: ['./other-products.component.css'],
+  styleUrls: ['./other-products.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OtherProductsComponent {

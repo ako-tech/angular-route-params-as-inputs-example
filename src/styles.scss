@@ -27,6 +27,6 @@ body {
   display: grid;
   grid-template: 1fr / 1fr;
   width: 100vw;
-  place-items: start center;
+  place-items: start stretch;
   padding: var(--base-separation);
 }
