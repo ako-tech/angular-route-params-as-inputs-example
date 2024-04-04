@@ -1,7 +1,7 @@
 import { Products } from '../product.interface';
 
 export const sortByPrice = ([products, orderBy]: [Products, string | null]) => {
-  if (orderBy === null) {
+  if (!orderBy) {
     return products;
   }
 
