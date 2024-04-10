@@ -1,7 +1,7 @@
 <h1>Catálogo</h1>
 <ako-catalog-filters />
 <div class="catalog-grid">
-  @for(product of orderedProducts$|async; track product.id){
+  @for(product of orderedProducts(); track product.id){
   <ako-catalog-product [product]="product" />
   }
 </div>

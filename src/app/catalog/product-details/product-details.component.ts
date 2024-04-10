@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
-import { CatalogService } from '../catalog.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input as ResolvedData,
+} from '@angular/core';
 import { Product } from '../product.interface';
 
 @Component({
@@ -12,15 +12,5 @@ import { Product } from '../product.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDetailsComponent {
-  id$: Observable<number> = this.route.paramMap.pipe(
-    map((paramMap) => Number(paramMap.get('id')))
-  );
-  product$: Observable<Product | null> = this.id$.pipe(
-    switchMap((id) => this.catalogService.getProduct(id))
-  );
-
-  constructor(
-    private catalogService: CatalogService,
-    private route: ActivatedRoute
-  ) {}
+  @ResolvedData() product!: Product | null;
 }

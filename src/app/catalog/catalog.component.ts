@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable, combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { CatalogService } from './catalog.service';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input as resolvedData,
+  input as queryParam,
+} from '@angular/core';
 import { filterByProductName, sortByPrice } from './helpers';
 import { Products } from './product.interface';
 
@@ -13,26 +15,14 @@ import { Products } from './product.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CatalogComponent {
-  products$ = this.catalogService.products$;
-  nameFilter$: Observable<string | null> = this.route.queryParamMap.pipe(
-    map((queryParamMap) => queryParamMap.get('f'))
+  products = resolvedData<Products>([]);
+  nameFilter = queryParam<string>('', { alias: 'f' });
+  orderBy = queryParam<string>('');
+
+  filteredProducts = computed(() =>
+    filterByProductName([this.products(), this.nameFilter()])
   );
-  orderBy$: Observable<string | null> = this.route.queryParamMap.pipe(
-    map((queryParamMap) => queryParamMap.get('orderBy'))
+  orderedProducts = computed(() =>
+    sortByPrice([this.filteredProducts(), this.orderBy()])
   );
-
-  filteredProducts$: Observable<Products> = combineLatest([
-    this.products$,
-    this.nameFilter$,
-  ]).pipe(map(filterByProductName));
-
-  orderedProducts$: Observable<Products> = combineLatest([
-    this.filteredProducts$,
-    this.orderBy$,
-  ]).pipe(map(sortByPrice));
-
-  constructor(
-    private catalogService: CatalogService,
-    private route: ActivatedRoute
-  ) {}
 }

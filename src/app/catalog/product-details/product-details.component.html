@@ -1,6 +1,6 @@
 <a backToCatalog class="back">&lt; Volver al catalogo</a>
 <div class="container">
-  @if(product$ | async; as product){
+  @if(product){
   <div class="img-container">
     <img src="/assets/items/{{ product.imageUrl }}" alt="{{ product.name }}" />
   </div>
@@ -19,4 +19,4 @@
   }
 </div>
 
-<!-- <ako-other-products /> -->
+<ako-other-products />
