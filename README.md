@@ -1,4 +1,4 @@
-# Ejemplo de uso de la guarda canDeactivate
+# Ejemplo de cómo extraer parámetros de ruta con @Inputs en Angular(16+)
 
 Esta es una aplicación básica de ejemplo para entender el funcionamiento del nuevo procedimiento que nos permite extraer los parámetros de ruta, parámetros de consulta y data de las rutas de Angular, usando `@Inputs` en nuestros componentes. Esta aplicación sirve de apoyo para el siguiente [video](https://youtu.be/Ozm4VOgYIQE).
 
