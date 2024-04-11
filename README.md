@@ -1,27 +1,15 @@
-# Project
+# Ejemplo de uso de la guarda canDeactivate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+Esta es una aplicación básica de ejemplo para entender el funcionamiento del nuevo procedimiento que nos permite extraer los parámetros de ruta, parámetros de consulta y data de las rutas de Angular, usando `@Inputs` en nuestros componentes. Esta aplicación sirve de apoyo para el siguiente [video](https://youtu.be/Ozm4VOgYIQE).
 
-## Development server
+## Observaciones
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Esta aplicación está única y exclusivamente creada para mostrar la funcionalidad descrita anteriormente lo más claramente posible. Debido a esto, partes del código han podido ser simplificadas u omitidas, y por tanto, no son ni pretenden ser ejemplos de buenas práticas.
 
-## Code scaffolding
+## Comandos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El proyecto está realizado sobre la `v17.2` de Angular.
 
-## Build
+Para levantar un servidor de desarrollo usar el comando `ng serve`. Este estará disponible en `http://localhost:4200/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para compilar la aplicación usar el comando `ng build`. Pudiendo usar la opcion `--prod` para compilar la versión de producción. Los archivos de la aplicación estarán disponibles en la carpeta `dist/`.
